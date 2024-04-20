@@ -26,7 +26,7 @@ const App = () => {
   };
 
   return (
-    <div className="flex flex-col items-center mx-auto max-w-md">
+    <div>
       <AddTaskForm addTask={addTask} />
       <TaskList tasks={tasks} completeTask={completeTask} incompleteTask={incompleteTask} deleteTask={deleteTask} />
     </div>
