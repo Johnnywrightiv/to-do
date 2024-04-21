@@ -1,36 +1,24 @@
 import React, { useState } from 'react';
 import TaskList from './task-list';
 import AddTaskForm from './add-task-form';
+// App.jsx
+import useAppState from './useAppState';
 
 const App = () => {
-  const [tasks, setTasks] = useState([]);
-
-  const addTask = (taskName) => {
-    setTasks([...tasks, { name: taskName, completed: false }]);
-  };
-
-  const completeTask = (taskIndex, completed = true) => {
-    const updatedTasks = tasks.map((task, index) =>
-      index === taskIndex ? { ...task, completed: completed } : task
-    );
-    setTasks(updatedTasks);
-  };
-
-  const incompleteTask = (taskIndex) => {
-    completeTask(taskIndex, false); // Set completed to false
-  };
-
-  const deleteTask = (taskIndex) => {
-    const updatedTasks = tasks.filter((task, index) => index !== taskIndex);
-    setTasks(updatedTasks);
-  };
+  const { tasks, addTask, completeTask, incompleteTask, deleteTask } = useAppState();
 
   return (
-    <div>
-      <AddTaskForm addTask={addTask} />
-      <TaskList tasks={tasks} completeTask={completeTask} incompleteTask={incompleteTask} deleteTask={deleteTask} />
+    <div className="flex justify-center items-center min-h-screen">
+      <div className="w-full max-w-md mx-auto p-4 bg-white rounded-lg shadow-lg">
+        <TaskList
+          tasks={tasks}
+          completeTask={completeTask}
+          incompleteTask={incompleteTask}
+          deleteTask={deleteTask}
+        />
+        <AddTaskForm addTask={addTask} />
+      </div>
     </div>
   );
 };
-
 export default App;
