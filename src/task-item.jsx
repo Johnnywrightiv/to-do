@@ -1,7 +1,7 @@
 // This component will represent an individual task item.
 
 import { useRef } from 'react';
-import useClickToEdit from './useClickToEdit';
+import useClickToEdit from './use-click-to-edit';
 
 const TaskItem = ({ task, index, completeTask, incompleteTask, deleteTask }) => {
   const { isEditing, editedText, setEditedText, handleEditClick, handleSaveEdit, handleKeyPress } = useClickToEdit(task.name);

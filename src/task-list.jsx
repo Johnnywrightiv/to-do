@@ -1,7 +1,7 @@
 // This component will contain the list of tasks.
 
 import React, { useState } from 'react';
-import useClickToEdit from './useClickToEdit';
+import useClickToEdit from './use-click-to-edit';
 import TaskItem from './task-item';
 
 const TaskList = ({ tasks, completeTask, incompleteTask, deleteTask }) => {
