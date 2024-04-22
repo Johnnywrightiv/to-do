@@ -9,14 +9,16 @@ const TaskItem = ({ task, index, completeTask, incompleteTask, deleteTask }) => 
   const shouldRetainFocus = useRef(false);
 
   const handleCheckboxChange = () => {
+    console.log('Task ID:', task._id); // Debugging
     if (!isEditing) {
       if (task.completed) {
         incompleteTask(index);
       } else {
-        completeTask(index);
+        completeTask(task._id); // Pass task ID instead of index
       }
     }
   };
+  
 
   const handleInputBlur = () => {
     if (editedText.trim().length === 0 && shouldRetainFocus.current) {
@@ -29,6 +31,10 @@ const TaskItem = ({ task, index, completeTask, incompleteTask, deleteTask }) => 
   const handleSpanClick = () => {
     handleEditClick();
     shouldRetainFocus.current = true;
+  };
+
+  const handleDeleteClick = () => {
+    deleteTask(task._id); // Pass the _id of the task to deleteTask
   };
 
   return (
@@ -64,13 +70,18 @@ const TaskItem = ({ task, index, completeTask, incompleteTask, deleteTask }) => 
       </label>
       <div className="relative">
         <span
-          onClick={() => deleteTask(index)}
+          onClick={handleDeleteClick}
           className="absolute top-0 right-0 transform -translate-y-1/2 cursor-pointer text-red-500 hover:text-red-700"
         >
           x
         </span>
       </div>
     </li>
+
+
+
+
+
   );
 };
 

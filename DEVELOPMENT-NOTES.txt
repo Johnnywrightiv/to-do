@@ -1,0 +1,19 @@
+TO DO LIST APP BUGS:
+
+- Clicking a task item when it is marked complete brings up an input field. We should prevent this while it it marked complete.
+
+- Clicking out of the task list h1 should save and update the list with the current input
+
+- UI is too small and stuck to middle of screen
+
+- Couldn’t get Drag & Drop to work. Try again with dnd-kit or react-dnd
+
+
+NEXT STEPS:
+
+- I have a simple to do app with a front end and a back end that I need to connect to impliment full CRUD functionality. I have built out the front end elements, I have set up local state management, I have constructed the server and API routes and built a model for the tasks schema. I have began connecting the front end and the back end with the API routes. I need to:
+  1. Connect the Complete and Incomplete routes and ensure they're working
+  2. Create a new route to update the text of the task
+  3. Work on users and auth...
+  4. Drag and drop
+  5. Deploy

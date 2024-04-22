@@ -30,9 +30,8 @@ const TaskList = ({ tasks, completeTask, incompleteTask, deleteTask }) => {
       <ul className="w-full list-none p-0 rounded-lg bg-gray-100">
         {tasks.map((task, index) => (
           <TaskItem
-            key={index}
+            key={task._id} // Assuming task._id is the unique identifier for each task
             task={task}
-            index={index}
             completeTask={completeTask}
             incompleteTask={incompleteTask}
             deleteTask={deleteTask}

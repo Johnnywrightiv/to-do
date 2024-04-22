@@ -71,10 +71,9 @@ button:focus-visible {
   }
 }
 
-/* Assuming you have a CSS file for your styles */
 .editing {
-  min-height: 57px; /* Set a minimum height for the container */
+  min-height: 57px;
 }
 .editing input[type="text"] {
-  height: 100%; /* Set input field to fill the container height */
+  height: 100%;
 }
